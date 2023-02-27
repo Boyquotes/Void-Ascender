@@ -1,8 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://cotqdefsjf0na"]
+[gd_scene load_steps=6 format=3 uid="uid://cotqdefsjf0na"]
 
 [ext_resource type="PackedScene" uid="uid://cymg34u14wrvq" path="res://Scenes/Player/player.tscn" id="1_qmi45"]
+[ext_resource type="PackedScene" uid="uid://e07s1pm1ap8a" path="res://Scenes/Objects/wall.tscn" id="2_xw3ha"]
+[ext_resource type="Texture2D" uid="uid://u4alp6mhj2i1" path="res://Assets/Objects/wall.png" id="3_ofs6p"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_86kn3"]
+texture = ExtResource("3_ofs6p")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_n3jgd"]
+physics_layer_0/collision_layer = 16
+sources/0 = SubResource("TileSetAtlasSource_86kn3")
 
 [node name="Level" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_qmi45")]
 position = Vector2(33, 23)
+
+[node name="Wall" parent="." instance=ExtResource("2_xw3ha")]
+visible = false
+position = Vector2(72, 40)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_n3jgd")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -65521, 0, 0, 15, 0, 0, 65551, 0, 0, 131087, 0, 0, 196623, 0, 0, 262159, 0, 0, 327695, 0, 0, 393231, 0, 0, 458767, 0, 0, 524303, 0, 0, 589839, 0, 0, 589838, 0, 0, 589837, 0, 0, 589836, 0, 0, 589835, 0, 0, 589834, 0, 0, 589833, 0, 0, 589832, 0, 0, 589831, 0, 0, 589830, 0, 0, 589829, 0, 0, 589828, 0, 0, 589827, 0, 0, 589826, 0, 0, 589825, 0, 0, 589824, 0, 0, 655359, 0, 0, 655358, 0, 0, 655357, 0, 0, 589821, 0, 0, 524285, 0, 0, 458749, 0, 0, 393213, 0, 0, 327677, 0, 0, 262141, 0, 0, 196605, 0, 0, 131069, 0, 0, 65533, 0, 0, -3, 0, 0, -65539, 0, 0)
