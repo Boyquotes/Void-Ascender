@@ -2,23 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wrv7jqquhlxx"
-path="res://.godot/imported/running_right.png-385dd1220d18ee23c18cb34ad056e1cd.ctex"
+uid="uid://ckmpu8hso47og"
+path="res://.godot/imported/run_down.png-21fcda0db11dd9a326750ffc2901e09a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/running_right.png"
-dest_files=["res://.godot/imported/running_right.png-385dd1220d18ee23c18cb34ad056e1cd.ctex"]
+source_file="res://Assets/Player/run_down.png"
+dest_files=["res://.godot/imported/run_down.png-21fcda0db11dd9a326750ffc2901e09a.ctex"]
 
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

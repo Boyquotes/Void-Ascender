@@ -25,6 +25,7 @@ func _physics_process(delta):
 	
 	if input_direction != Vector2.ZERO:
 		velocity = input_direction * SPEED * delta;
+		current_state = RUNNING;
 		animation_tree.set("parameters/Idle/blend_position", input_direction);
 		animation_tree.set("parameters/Run/blend_position", input_direction);
 
@@ -48,7 +49,7 @@ func idle():
 	animation_tree.get("parameters/playback").travel("Idle");
 	
 func running():
-	pass
+	animation_tree.get("parameters/playback").travel("Run");
 	
 func attacking():
 	pass
