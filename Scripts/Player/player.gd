@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var animation_tree = $AnimationTree;
 
 const SPEED = 6000;
-const FRICTION = 500;
+const FRICTION = 600;
 
 enum {
 	IDLE,
@@ -24,8 +24,9 @@ func _physics_process(delta):
 	var input_direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down")).normalized();
 	
 	if input_direction != Vector2.ZERO:
-		velocity = input_direction * SPEED * delta;
 		current_state = RUNNING;
+		velocity = input_direction * SPEED * delta;
+		
 		animation_tree.set("parameters/Idle/blend_position", input_direction);
 		animation_tree.set("parameters/Run/blend_position", input_direction);
 
